@@ -1,0 +1,54 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Sandbox/Scenes/SpaceObjects/WarpGate.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Sandbox/Scenes/SolarSystemBackgrounds/ParallaxSpaceBackground.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Sandbox/Sprites/SpaceObjects/PurplePlanet.png" type="Texture" id=3]
+[ext_resource path="res://Sandbox/Scenes/SpaceObjects/Asteroid.tscn" type="PackedScene" id=4]
+
+[node name="Sirius System" type="Node2D"]
+
+[node name="ParallaxSpaceBackground" parent="." instance=ExtResource( 2 )]
+
+[node name="Sprite" type="Sprite" parent="ParallaxSpaceBackground/NearBackground" index="0"]
+scale = Vector2( 0.429392, 0.429392 )
+texture = ExtResource( 3 )
+
+[node name="WarpGates" type="Node" parent="."]
+
+[node name="WarpGate to Luyten System" parent="WarpGates" instance=ExtResource( 1 )]
+position = Vector2( -297.293, 155.327 )
+destinationSolarSystemName = "Luyten System"
+
+[node name="WarpGate to Barnard\'s Star System" parent="WarpGates" instance=ExtResource( 1 )]
+position = Vector2( 178.71, -151.987 )
+destinationSolarSystemName = "Barnard's Star System"
+
+[node name="WarpGate to Kepler 438 System" parent="WarpGates" instance=ExtResource( 1 )]
+position = Vector2( 512.746, -452.619 )
+destinationSolarSystemName = "Kepler 438 System"
+
+[node name="WarpGate to Sol System" parent="WarpGates" instance=ExtResource( 1 )]
+position = Vector2( -506.485, -33.1163 )
+destinationSolarSystemName = "Sol System"
+
+[node name="SpaceObjects" type="Node2D" parent="."]
+position = Vector2( -338.955, -192.854 )
+
+[node name="Asteroid" parent="SpaceObjects" instance=ExtResource( 4 )]
+
+[node name="Asteroid2" parent="SpaceObjects" instance=ExtResource( 4 )]
+position = Vector2( 222.074, -116.881 )
+
+[node name="Asteroid3" parent="SpaceObjects" instance=ExtResource( 4 )]
+position = Vector2( 142.205, 177.27 )
+
+[node name="Asteroid4" parent="SpaceObjects" instance=ExtResource( 4 )]
+position = Vector2( 434.408, 338.955 )
+
+[node name="Asteroid5" parent="SpaceObjects" instance=ExtResource( 4 )]
+position = Vector2( 701.287, 216.23 )
+
+[node name="Asteroid6" parent="SpaceObjects" instance=ExtResource( 4 )]
+position = Vector2( 654.534, -188.958 )
+
+[editable path="ParallaxSpaceBackground"]

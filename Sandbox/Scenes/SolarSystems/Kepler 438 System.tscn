@@ -1,0 +1,170 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Sandbox/Scenes/SpaceObjects/WarpGate.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Sandbox/Scenes/SolarSystemBackgrounds/ParallaxSpaceBackground.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Sandbox/Sprites/SpaceObjects/FrostPlanet.png" type="Texture" id=3]
+[ext_resource path="res://Sandbox/Scenes/SpaceObjects/LargeBody.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Sandbox/Sprites/SpaceObjects/DarkPlanet.png" type="Texture" id=5]
+[ext_resource path="res://Sandbox/Scenes/SpaceObjects/Asteroid.tscn" type="PackedScene" id=6]
+
+[node name="Kepler 438 System" type="Node2D"]
+
+[node name="ParallaxSpaceBackground" parent="." instance=ExtResource( 2 )]
+
+[node name="WarpGates" type="Node2D" parent="."]
+
+[node name="WarpGate to Quaid System" parent="WarpGates" instance=ExtResource( 1 )]
+position = Vector2( -424.463, 410.109 )
+destinationSolarSystemName = "Quaid System"
+
+[node name="WarpGate to Sirius System" parent="WarpGates" instance=ExtResource( 1 )]
+position = Vector2( 719.742, -141.488 )
+destinationSolarSystemName = "Sirius System"
+
+[node name="WarpGate to Groombridge System" parent="WarpGates" instance=ExtResource( 1 )]
+position = Vector2( 244.835, 558.077 )
+destinationSolarSystemName = "Groombridge System"
+
+[node name="WarpGate to Alpha Centauri System" parent="WarpGates" instance=ExtResource( 1 )]
+position = Vector2( -621.316, -45.112 )
+destinationSolarSystemName = "Alpha Centauri System"
+
+[node name="WarpGate to Wolf 359 System" parent="WarpGates" instance=ExtResource( 1 )]
+position = Vector2( -8.20215, -342.441 )
+destinationSolarSystemName = "Wolf 359 System"
+
+[node name="SpaceObjects" type="Node2D" parent="."]
+
+[node name="Planet Kepler 438" parent="SpaceObjects" instance=ExtResource( 4 )]
+position = Vector2( 1276.38, 107.665 )
+gravitySignature = 2
+scanSignature = "Common:70|Metal:20|Water:10"
+
+[node name="Sprite" parent="SpaceObjects/Planet Kepler 438" index="0"]
+scale = Vector2( 1.335, 1.335 )
+texture = ExtResource( 3 )
+
+[node name="Planet Avallac\'h" parent="SpaceObjects" instance=ExtResource( 4 )]
+position = Vector2( -1219.09, -211.182 )
+gravitySignature = 2
+scanSignature = "Common:70|Metal:20|Terror:10|Water:0"
+
+[node name="Sprite" parent="SpaceObjects/Planet Avallac\'h" index="0"]
+scale = Vector2( 1.335, 1.335 )
+texture = ExtResource( 5 )
+
+[node name="Asteroids" type="Node2D" parent="SpaceObjects"]
+
+[node name="Asteroid" parent="SpaceObjects/Asteroids" instance=ExtResource( 6 )]
+position = Vector2( 335.115, 448.989 )
+
+[node name="Asteroid2" parent="SpaceObjects/Asteroids" instance=ExtResource( 6 )]
+position = Vector2( 401.738, 548.923 )
+
+[node name="Asteroid3" parent="SpaceObjects/Asteroids" instance=ExtResource( 6 )]
+position = Vector2( 533.131, 635.902 )
+
+[node name="Asteroid4" parent="SpaceObjects/Asteroids" instance=ExtResource( 6 )]
+position = Vector2( 579.397, 413.828 )
+
+[node name="Asteroid5" parent="SpaceObjects/Asteroids" instance=ExtResource( 6 )]
+position = Vector2( 438.75, 404.574 )
+
+[node name="Asteroid6" parent="SpaceObjects/Asteroids" instance=ExtResource( 6 )]
+position = Vector2( 627.513, 282.434 )
+
+[node name="Asteroid7" parent="SpaceObjects/Asteroids" instance=ExtResource( 6 )]
+position = Vector2( 744.102, 386.068 )
+
+[node name="Asteroid8" parent="SpaceObjects/Asteroids" instance=ExtResource( 6 )]
+position = Vector2( 749.654, 519.313 )
+
+[node name="Asteroid9" parent="SpaceObjects/Asteroids" instance=ExtResource( 6 )]
+position = Vector2( 594.202, 530.416 )
+
+[node name="Asteroid10" parent="SpaceObjects/Asteroids" instance=ExtResource( 6 )]
+position = Vector2( 694.135, 654.408 )
+
+[node name="Asteroid11" parent="SpaceObjects/Asteroids" instance=ExtResource( 6 )]
+position = Vector2( 407.289, 687.719 )
+
+[node name="Asteroid12" parent="SpaceObjects/Asteroids" instance=ExtResource( 6 )]
+position = Vector2( 525.729, 780.25 )
+
+[node name="Asteroid13" parent="SpaceObjects/Asteroids" instance=ExtResource( 6 )]
+position = Vector2( 270.344, 722.88 )
+
+[node name="Asteroid14" parent="SpaceObjects/Asteroids" instance=ExtResource( 6 )]
+position = Vector2( 460.957, 284.284 )
+
+[node name="Asteroid15" parent="SpaceObjects/Asteroids" instance=ExtResource( 6 )]
+position = Vector2( 299.954, 321.297 )
+
+[node name="Asteroid16" parent="SpaceObjects/Asteroids" instance=ExtResource( 6 )]
+position = Vector2( 196.319, 456.392 )
+
+[node name="Asteroid17" parent="SpaceObjects/Asteroids" instance=ExtResource( 6 )]
+position = Vector2( 131.547, 558.175 )
+
+[node name="Asteroid18" parent="SpaceObjects/Asteroids" instance=ExtResource( 6 )]
+position = Vector2( 33.4648, 706.225 )
+
+[node name="Asteroid19" parent="SpaceObjects/Asteroids" instance=ExtResource( 6 )]
+position = Vector2( 150.054, 676.615 )
+
+[node name="Asteroid20" parent="SpaceObjects/Asteroids" instance=ExtResource( 6 )]
+position = Vector2( 74.1783, 426.782 )
+
+[node name="Asteroid21" parent="SpaceObjects/Asteroids" instance=ExtResource( 6 )]
+position = Vector2( 153.755, 289.836 )
+
+[node name="Asteroid22" parent="SpaceObjects/Asteroids" instance=ExtResource( 6 )]
+position = Vector2( -371.848, -235.767 )
+
+[node name="Asteroid23" parent="SpaceObjects/Asteroids" instance=ExtResource( 6 )]
+position = Vector2( -515.728, 187.064 )
+
+[node name="Asteroid24" parent="SpaceObjects/Asteroids" instance=ExtResource( 6 )]
+position = Vector2( 432.706, -247.512 )
+
+[node name="Asteroid25" parent="SpaceObjects/Asteroids" instance=ExtResource( 6 )]
+position = Vector2( -583.264, -309.175 )
+
+[node name="Asteroid26" parent="SpaceObjects/Asteroids" instance=ExtResource( 6 )]
+position = Vector2( 926.009, -165.295 )
+
+[node name="Asteroid27" parent="SpaceObjects/Asteroids" instance=ExtResource( 6 )]
+position = Vector2( 873.155, -24.3513 )
+
+[node name="Asteroid28" parent="SpaceObjects/Asteroids" instance=ExtResource( 6 )]
+position = Vector2( -891.578, -171.168 )
+
+[node name="Asteroid29" parent="SpaceObjects/Asteroids" instance=ExtResource( 6 )]
+position = Vector2( -991.413, -56.6509 )
+
+[node name="Asteroid30" parent="SpaceObjects/Asteroids" instance=ExtResource( 6 )]
+position = Vector2( -932.687, 160.637 )
+
+[node name="Asteroid31" parent="SpaceObjects/Asteroids" instance=ExtResource( 6 )]
+position = Vector2( -668.417, 366.18 )
+
+[node name="Asteroid32" parent="SpaceObjects/Asteroids" instance=ExtResource( 6 )]
+position = Vector2( 312.317, -488.291 )
+
+[node name="Asteroid33" parent="SpaceObjects/Asteroids" instance=ExtResource( 6 )]
+position = Vector2( -183.923, -567.572 )
+
+[node name="Asteroid34" parent="SpaceObjects/Asteroids" instance=ExtResource( 6 )]
+position = Vector2( 130.264, -177.04 )
+
+[node name="Asteroid35" parent="SpaceObjects/Asteroids" instance=ExtResource( 6 )]
+position = Vector2( -125.196, 90.1655 )
+
+[node name="Asteroid36" parent="SpaceObjects/Asteroids" instance=ExtResource( 6 )]
+position = Vector2( 297.635, 37.3116 )
+
+[editable path="ParallaxSpaceBackground"]
+
+[editable path="SpaceObjects/Planet Kepler 438"]
+
+[editable path="SpaceObjects/Planet Avallac'h"]

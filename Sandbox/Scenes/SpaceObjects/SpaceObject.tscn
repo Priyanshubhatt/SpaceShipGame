@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Sandbox/Scripts/SpaceObjects/SpaceObject.cs" type="Script" id=1]
+[ext_resource path="res://Sandbox/Sprites/SpaceObjects/Planet081.png" type="Texture" id=2]
+
+[node name="SpaceObject" type="Node2D"]
+script = ExtResource( 1 )
+materials = [  ]
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )

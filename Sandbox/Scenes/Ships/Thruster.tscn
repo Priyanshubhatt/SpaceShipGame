@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Sandbox/Sprites/ShipSprites/ThrusterFlame.png" type="Texture" id=1]
+[ext_resource path="res://Sandbox/Sprites/ShipSprites/ThrusterNozzle.png" type="Texture" id=2]
+[ext_resource path="res://Sandbox/Scenes/Ships/Thruster.cs" type="Script" id=3]
+
+[node name="Thruster" type="Node2D"]
+script = ExtResource( 3 )
+maxThrustForce = 100.0
+
+[node name="Flame" type="Sprite" parent="."]
+position = Vector2( -25, 0 )
+texture = ExtResource( 1 )
+offset = Vector2( -25, 0 )
+
+[node name="Nozzle" type="Sprite" parent="."]
+texture = ExtResource( 2 )

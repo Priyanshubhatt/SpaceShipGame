@@ -1,0 +1,65 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Sandbox/Scenes/UIScenes/ShipInfoPanels.cs" type="Script" id=1]
+[ext_resource path="res://Sandbox/Scenes/UIScenes/SensorsSubsystemInformationPanel.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Sandbox/Scenes/UIScenes/PropulsionSubsystemInfoPanel.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Sandbox/Scenes/UIScenes/DefenceSubsystemInformationPanel.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Sandbox/Scenes/UIScenes/ShipSelectPanel.tscn" type="PackedScene" id=7]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0, 0, 0, 0.196078 )
+
+[node name="ShipInfoPanels" type="VBoxContainer"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -196.0
+margin_right = 672.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ShipSelectPanel" parent="." instance=ExtResource( 7 )]
+anchor_top = 0.0
+anchor_bottom = 0.0
+margin_top = 0.0
+margin_right = 672.0
+margin_bottom = 20.0
+
+[node name="InfoPanels" type="HBoxContainer" parent="."]
+margin_top = 24.0
+margin_right = 672.0
+margin_bottom = 178.0
+custom_constants/separation = 10
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SensorsSubsystemInformationPanel" parent="InfoPanels" instance=ExtResource( 4 )]
+anchor_top = 0.0
+anchor_bottom = 0.0
+margin_top = 0.0
+margin_right = 167.0
+margin_bottom = 154.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.0
+
+[node name="PropulsionSubsystemInformationPanel" parent="InfoPanels" instance=ExtResource( 5 )]
+anchor_top = 0.0
+anchor_bottom = 0.0
+margin_left = 177.0
+margin_top = 0.0
+margin_right = 500.0
+margin_bottom = 154.0
+size_flags_horizontal = 3
+custom_styles/panel = SubResource( 1 )
+
+[node name="DefenceSubsystemInformationPanel" parent="InfoPanels" instance=ExtResource( 6 )]
+anchor_top = 0.0
+anchor_bottom = 0.0
+margin_left = 510.0
+margin_top = 0.0
+margin_right = 672.0
+margin_bottom = 154.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5

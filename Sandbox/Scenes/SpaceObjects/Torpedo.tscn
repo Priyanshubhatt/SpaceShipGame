@@ -1,0 +1,64 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Sandbox/Scripts/SpaceObjects/Torpedo.cs" type="Script" id=1]
+[ext_resource path="res://Sandbox/Sprites/SpaceObjects/SpaceMissiles040.png" type="Texture" id=2]
+[ext_resource path="res://Sandbox/Scenes/VFX/RegularExplosion.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Sandbox/Sprites/BasicShapes/Circle.png" type="Texture" id=4]
+
+[sub_resource type="Gradient" id=1]
+offsets = PoolRealArray( 0, 0.0421941, 0.113924, 0.219409, 1 )
+colors = PoolColorArray( 1, 1, 1, 0, 1, 1, 1, 1, 0.96875, 1, 0, 0.92511, 1, 0.46875, 0, 0.814978, 1, 0, 0.867188, 0 )
+
+[sub_resource type="GradientTexture" id=2]
+gradient = SubResource( 1 )
+
+[sub_resource type="Curve" id=3]
+_data = [ Vector2( 0, 1 ), 0.0, -0.053719, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=4]
+curve = SubResource( 3 )
+
+[sub_resource type="ParticlesMaterial" id=5]
+flag_disable_z = true
+gravity = Vector3( 0, 0, 0 )
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale = 0.05
+scale_curve = SubResource( 4 )
+color_ramp = SubResource( 2 )
+
+[sub_resource type="CapsuleShape2D" id=6]
+
+[sub_resource type="CircleShape2D" id=7]
+radius = 200.0
+
+[node name="Torpedo" type="Area2D"]
+collision_layer = 2
+collision_mask = 6
+script = ExtResource( 1 )
+explosionScene = ExtResource( 3 )
+
+[node name="Particles2D" type="Particles2D" parent="."]
+position = Vector2( -15.8263, 0.184029 )
+z_index = 1
+amount = 100
+local_coords = false
+process_material = SubResource( 5 )
+texture = ExtResource( 4 )
+
+[node name="Sprite" type="Sprite" parent="."]
+rotation = 1.57079
+z_index = 1
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource( 6 )
+
+[node name="ExplosionArea" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 3
+
+[node name="ExplosionCollisionShape2D" type="CollisionShape2D" parent="ExplosionArea"]
+shape = SubResource( 7 )
+[connection signal="body_entered" from="." to="." method="OnBodyEntered"]

@@ -1,0 +1,22 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://SubsystemControllers/Nostromo/NostromoSensorsController.cs" type="Script" id=1]
+[ext_resource path="res://SubsystemControllers/Nostromo/NostromoDefenceController.cs" type="Script" id=2]
+[ext_resource path="res://SubsystemControllers/Nostromo/NostromoPropulsionController.cs" type="Script" id=3]
+[ext_resource path="res://Sandbox/Scenes/Ships/ColonyShip.tscn" type="PackedScene" id=4]
+[ext_resource path="res://SubsystemControllers/Nostromo/NostromoNavigationController.cs" type="Script" id=5]
+
+[node name="Nostromo" instance=ExtResource( 4 )]
+shipName = 9
+
+[node name="SensorsSubsystemController" parent="SubsystemControllers" index="0"]
+script = ExtResource( 1 )
+
+[node name="NavigationSubsystemController" parent="SubsystemControllers" index="1"]
+script = ExtResource( 5 )
+
+[node name="DefenceSubsystemController" parent="SubsystemControllers" index="2"]
+script = ExtResource( 2 )
+
+[node name="PropulsionSubsystemController" parent="SubsystemControllers" index="3"]
+script = ExtResource( 3 )

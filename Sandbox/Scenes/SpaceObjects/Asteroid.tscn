@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Sandbox/Sprites/SpaceObjects/SpaceMeteors001.png" type="Texture" id=1]
+[ext_resource path="res://Sandbox/Scripts/SpaceObjects/Asteroid.cs" type="Script" id=2]
+[ext_resource path="res://Sandbox/Scenes/SpaceObjects/SpaceMaterialSignature.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Sandbox/Scenes/SpaceObjects/AsteroidDebris.tscn" type="PackedScene" id=4]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 50.0
+
+[node name="Asteroid" type="RigidBody2D"]
+collision_layer = 2
+collision_mask = 3
+mass = 10.0
+linear_damp = 0.0
+angular_damp = 0.0
+script = ExtResource( 2 )
+asteroidDebrisScene = ExtResource( 4 )
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 0.461501, 0.461501 )
+texture = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="SpaceMaterialSignature" parent="." instance=ExtResource( 3 )]
+common = true

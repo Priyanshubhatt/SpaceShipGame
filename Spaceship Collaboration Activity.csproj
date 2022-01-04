@@ -1,0 +1,186 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Tools</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8C359B6F-D12B-402A-9044-5FE7E9A74FF3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <OutputPath>.mono\temp\bin\$(Configuration)</OutputPath>
+    <RootNamespace>SpaceshipCollaborationActivity</RootNamespace>
+    <AssemblyName>Spaceship Collaboration Activity</AssemblyName>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+    <GodotProjectGeneratorVersion>1.0.7374.16792</GodotProjectGeneratorVersion>
+    <BaseIntermediateOutputPath>.mono\temp\obj</BaseIntermediateOutputPath>
+    <IntermediateOutputPath>$(BaseIntermediateOutputPath)\$(Configuration)</IntermediateOutputPath>
+    <ApiConfiguration Condition=" '$(Configuration)' != 'Release' ">Debug</ApiConfiguration>
+    <ApiConfiguration Condition=" '$(Configuration)' == 'Release' ">Release</ApiConfiguration>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>portable</DebugType>
+    <Optimize>false</Optimize>
+    <DefineConstants>$(GodotDefineConstants);GODOT;DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>portable</DebugType>
+    <Optimize>true</Optimize>
+    <DefineConstants>$(GodotDefineConstants);GODOT;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Tools|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>portable</DebugType>
+    <Optimize>false</Optimize>
+    <DefineConstants>$(GodotDefineConstants);GODOT;DEBUG;TOOLS;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="GodotSharp">
+      <Private>False</Private>
+      <HintPath>$(ProjectDir)/.mono/assemblies/$(ApiConfiguration)/GodotSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="GodotSharpEditor" Condition=" '$(Configuration)' == 'Tools' ">
+      <Private>False</Private>
+      <HintPath>$(ProjectDir)/.mono/assemblies/$(ApiConfiguration)/GodotSharpEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sandbox\Scenes\GalaxyMaps\GalaxyMapNodeSprite.cs" />
+    <Compile Include="Sandbox\Scenes\Ships\Thruster.cs" />
+    <Compile Include="Sandbox\Scenes\Ships\VelocityRecord.cs" />
+    <Compile Include="Sandbox\Scenes\SpaceObjects\AsteroidSpawnLauncher.cs" />
+    <Compile Include="Sandbox\Scenes\SpaceObjects\LargeBody.cs" />
+    <Compile Include="Sandbox\Scenes\SpaceObjects\TurbulenceField.cs" />
+    <Compile Include="Sandbox\Scenes\UIScenes\DefenceSubsystemInformationPanel.cs" />
+    <Compile Include="Sandbox\Scenes\UIScenes\PropulsionSubsystemInfoPanel.cs" />
+    <Compile Include="Sandbox\Scenes\UIScenes\SensorsSubsystemInformationPanel.cs" />
+    <Compile Include="Sandbox\Scenes\UIScenes\ShipInfoPanels.cs" />
+    <Compile Include="Sandbox\Scenes\UIScenes\ShipSelectPanel.cs" />
+    <Compile Include="Sandbox\Scenes\VFX\RegularExplosion.cs" />
+    <Compile Include="Sandbox\Scenes\VFX\UFODriveParticles.cs" />
+    <Compile Include="Sandbox\Scripts\GameCore.cs" />
+    <Compile Include="Sandbox\Scripts\MainCamera.cs" />
+    <Compile Include="Sandbox\Scripts\RandomNumberUtility.cs" />
+    <Compile Include="Sandbox\Scripts\ShipNames.cs" />
+    <Compile Include="Sandbox\Scripts\Ship\IPassiveSensors.cs" />
+    <Compile Include="Sandbox\Scripts\Ship\IActiveSensors.cs" />
+    <Compile Include="Sandbox\Scripts\Ship\ShipPropulsionMode.cs" />
+    <Compile Include="Sandbox\Scripts\Ship\ShipStatusInfo.cs" />
+    <Compile Include="Sandbox\Scripts\SimulationMode.cs" />
+    <Compile Include="Sandbox\Scripts\Galaxy\GalaxyMap.cs" />
+    <Compile Include="Sandbox\Scripts\Galaxy\GalaxyMapData.cs" />
+    <Compile Include="Sandbox\Scripts\Galaxy\GalaxyMapEdge.cs" />
+    <Compile Include="Sandbox\Scripts\Galaxy\GalaxyMapEdgeData.cs" />
+    <Compile Include="Sandbox\Scripts\Galaxy\GalaxyMapNode.cs" />
+    <Compile Include="Sandbox\Scripts\Galaxy\GalaxyMapNodeData.cs" />
+    <Compile Include="Sandbox\Scripts\Ship\ColonyShip.cs" />
+    <Compile Include="Sandbox\Scripts\Ship\EMSReading.cs" />
+    <Compile Include="Sandbox\Scripts\Ship\GravitySignature.cs" />
+    <Compile Include="Sandbox\Scripts\Ship\PassiveSensorReading.cs" />
+    <Compile Include="Sandbox\Scripts\Ship\ActiveSensors.cs" />
+    <Compile Include="Sandbox\Scripts\Ship\PassiveSensors.cs" />
+    <Compile Include="Sandbox\Scripts\Ship\SpaceMaterials.cs" />
+    <Compile Include="Sandbox\Scripts\Ship\SubsystemReferences.cs" />
+    <Compile Include="Sandbox\Scripts\Ship\ThrusterControls.cs" />
+    <Compile Include="Sandbox\Scripts\Ship\Turret.cs" />
+    <Compile Include="Sandbox\Scripts\Ship\TurretControls.cs" />
+    <Compile Include="Sandbox\Scripts\SolarSystemNames.cs" />
+    <Compile Include="Sandbox\Scripts\SpaceObjects\Asteroid.cs" />
+    <Compile Include="Sandbox\Scripts\SpaceObjects\AsteroidDebris.cs" />
+    <Compile Include="Sandbox\Scripts\SpaceObjects\IDamageReceiver.cs" />
+    <Compile Include="Sandbox\Scripts\SpaceObjects\IHasCollisionRadius.cs" />
+    <Compile Include="Sandbox\Scripts\SpaceObjects\IHasScanSignature.cs" />
+    <Compile Include="Sandbox\Scripts\SpaceObjects\SpaceMaterialSignature.cs" />
+    <Compile Include="Sandbox\Scripts\SpaceObjects\SpaceObject.cs" />
+    <Compile Include="Sandbox\Scripts\SpaceObjects\Torpedo.cs" />
+    <Compile Include="Sandbox\Scripts\SpaceObjects\WarpGate.cs" />
+    <Compile Include="Sandbox\Scripts\UIScripts\MissionAccomplishedUI.cs" />
+    <Compile Include="Sandbox\Scripts\AbstractSubsystemControllers\AbstractDefenceController.cs" />
+    <Compile Include="Sandbox\Scripts\AbstractSubsystemControllers\AbstractNavigationController.cs" />
+    <Compile Include="Sandbox\Scripts\AbstractSubsystemControllers\AbstractPropulsionController.cs" />
+    <Compile Include="Sandbox\Scripts\AbstractSubsystemControllers\AbstractSensorsController.cs" />
+    <Compile Include="Sandbox\Scripts\AbstractSubsystemControllers\AbstractSubsystemController.cs" />
+    <Compile Include="SubsystemControllers\Bebop\BebopDefenceController.cs" />
+    <Compile Include="SubsystemControllers\Bebop\BebopNavigationController.cs" />
+    <Compile Include="SubsystemControllers\Bebop\BebopPropulsionController.cs" />
+    <Compile Include="SubsystemControllers\Bebop\BebopSensorsController.cs" />
+    <Compile Include="SubsystemControllers\Bismark\BismarkDefenceController.cs" />
+    <Compile Include="SubsystemControllers\Bismark\BismarkNavigationController.cs" />
+    <Compile Include="SubsystemControllers\Bismark\BismarkPropulsionController.cs" />
+    <Compile Include="SubsystemControllers\Bismark\BismarkSensorsController.cs" />
+    <Compile Include="SubsystemControllers\ExampleDefenceController.cs" />
+    <Compile Include="SubsystemControllers\Enterprise\EnterpriseDefenceController.cs" />
+    <Compile Include="SubsystemControllers\Enterprise\EnterpriseNavigationController.cs" />
+    <Compile Include="SubsystemControllers\Enterprise\EnterprisePropulsionController.cs" />
+    <Compile Include="SubsystemControllers\Enterprise\EnterpriseSensorsController.cs" />
+    <Compile Include="SubsystemControllers\EventHorizon\EventHorizonDefenceController.cs" />
+    <Compile Include="SubsystemControllers\EventHorizon\EventHorizonNavigationController.cs" />
+    <Compile Include="SubsystemControllers\EventHorizon\EventHorizonPropulsionController.cs" />
+    <Compile Include="SubsystemControllers\EventHorizon\EventHorizonSensorsController.cs" />
+    <Compile Include="SubsystemControllers\FlyingDutchman\FlyingDutchmanDefenceController.cs" />
+    <Compile Include="SubsystemControllers\FlyingDutchman\FlyingDutchmanNavigationController.cs" />
+    <Compile Include="SubsystemControllers\FlyingDutchman\FlyingDutchmanPropulsionController.cs" />
+    <Compile Include="SubsystemControllers\FlyingDutchman\FlyingDutchmanSensorsController.cs" />
+    <Compile Include="SubsystemControllers\ExampleNavigationController.cs" />
+    <Compile Include="SubsystemControllers\Normandy\NormandyDefenceController.cs" />
+    <Compile Include="SubsystemControllers\Normandy\NormandyNavigationController.cs" />
+    <Compile Include="SubsystemControllers\Normandy\NormandyPropulsionController.cs" />
+    <Compile Include="SubsystemControllers\Normandy\NormandySensorsController.cs" />
+    <Compile Include="SubsystemControllers\PillarOfAutumn\PillarOfAutumnDefenceController.cs" />
+    <Compile Include="SubsystemControllers\PillarOfAutumn\PillarOfAutumnNavigationController.cs" />
+    <Compile Include="SubsystemControllers\PillarOfAutumn\PillarOfAutumnPropulsionController.cs" />
+    <Compile Include="SubsystemControllers\PillarOfAutumn\PillarOfAutumnSensorsController.cs" />
+    <Compile Include="SubsystemControllers\PlanetExpress\PlanetExpressDefenceController.cs" />
+    <Compile Include="SubsystemControllers\PlanetExpress\PlanetExpressNavigationController.cs" />
+    <Compile Include="SubsystemControllers\PlanetExpress\PlanetExpressPropulsionController.cs" />
+    <Compile Include="SubsystemControllers\PlanetExpress\PlanetExpressSensorsController.cs" />
+    <Compile Include="SubsystemControllers\ExamplePropulsionController.cs" />
+    <Compile Include="SubsystemControllers\RedDwarf\RedDwarfDefenceController.cs" />
+    <Compile Include="SubsystemControllers\RedDwarf\RedDwarfNavigationController.cs" />
+    <Compile Include="SubsystemControllers\RedDwarf\RedDwarfPropulsionController.cs" />
+    <Compile Include="SubsystemControllers\RedDwarf\RedDwarfSensorsController.cs" />
+    <Compile Include="SubsystemControllers\Nostromo\NostromoDefenceController.cs" />
+    <Compile Include="SubsystemControllers\Nostromo\NostromoNavigationController.cs" />
+    <Compile Include="SubsystemControllers\Nostromo\NostromoPropulsionController.cs" />
+    <Compile Include="SubsystemControllers\Nostromo\NostromoSensorsController.cs" />
+    <Compile Include="SubsystemControllers\Galactica\GalacticaDefenceController.cs" />
+    <Compile Include="SubsystemControllers\Galactica\GalacticaNavigationController.cs" />
+    <Compile Include="SubsystemControllers\Galactica\GalacticaPropulsionController.cs" />
+    <Compile Include="SubsystemControllers\Galactica\GalacticaSensorsController.cs" />
+    <Compile Include="SubsystemControllers\Milano\MilanoDefenceController.cs" />
+    <Compile Include="SubsystemControllers\Milano\MilanoNavigationController.cs" />
+    <Compile Include="SubsystemControllers\Milano\MilanoPropulsionController.cs" />
+    <Compile Include="SubsystemControllers\Milano\MilanoSensorsController.cs" />
+    <Compile Include="SubsystemControllers\Rama\RamaDefenceController.cs" />
+    <Compile Include="SubsystemControllers\Rama\RamaNavigationController.cs" />
+    <Compile Include="SubsystemControllers\Rama\RamaPropulsionController.cs" />
+    <Compile Include="SubsystemControllers\Rama\RamaSensorsController.cs" />
+    <Compile Include="SubsystemControllers\ExampleSensorsController.cs" />
+    <Compile Include="SubsystemControllers\Serenity\SerenityDefenceController.cs" />
+    <Compile Include="SubsystemControllers\Serenity\SerenityNavigationController.cs" />
+    <Compile Include="SubsystemControllers\Serenity\SerenityPropulsionController.cs" />
+    <Compile Include="SubsystemControllers\Serenity\SerenitySensorsController.cs" />
+    <Compile Include="SubsystemControllers\SSAnne\SSAnneDefenceController.cs" />
+    <Compile Include="SubsystemControllers\SSAnne\SSAnneNavigationController.cs" />
+    <Compile Include="SubsystemControllers\SSAnne\SSAnnePropulsionController.cs" />
+    <Compile Include="SubsystemControllers\SSAnne\SSAnneSensorsController.cs" />
+    <Compile Include="SubsystemControllers\Thunderbird3\Thunderbird3DefenceController.cs" />
+    <Compile Include="SubsystemControllers\Thunderbird3\Thunderbird3NavigationController.cs" />
+    <Compile Include="SubsystemControllers\Thunderbird3\Thunderbird3PropulsionController.cs" />
+    <Compile Include="SubsystemControllers\Thunderbird3\Thunderbird3SensorsController.cs" />
+    <Compile Include="SubsystemControllers\Yamato\YamatoDefenceController.cs" />
+    <Compile Include="SubsystemControllers\Yamato\YamatoNavigationController.cs" />
+    <Compile Include="SubsystemControllers\Yamato\YamatoPropulsionController.cs" />
+    <Compile Include="SubsystemControllers\Yamato\YamatoSensorsController.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>

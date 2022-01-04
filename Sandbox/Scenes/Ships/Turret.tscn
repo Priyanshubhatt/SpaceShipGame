@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Sandbox/Scripts/Ship/Turret.cs" type="Script" id=1]
+[ext_resource path="res://Sandbox/Sprites/ShipSprites/TurretSprite.png" type="Texture" id=2]
+[ext_resource path="res://Sandbox/Scenes/SpaceObjects/Torpedo.tscn" type="PackedScene" id=3]
+
+[node name="Turret" type="Node2D"]
+script = ExtResource( 1 )
+launchSpeed = 1000.0
+torpedoScene = ExtResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="."]
+rotation = 1.5708
+scale = Vector2( 0.0862654, 0.0862654 )
+texture = ExtResource( 2 )

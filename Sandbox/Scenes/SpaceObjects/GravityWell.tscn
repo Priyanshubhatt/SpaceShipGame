@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=2]
+
+[sub_resource type="Gradient" id=1]
+offsets = PoolRealArray( 0, 0.126582, 0.890295, 1 )
+colors = PoolColorArray( 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0 )
+
+[sub_resource type="GradientTexture" id=2]
+gradient = SubResource( 1 )
+
+[sub_resource type="ParticlesMaterial" id=3]
+emission_shape = 1
+emission_sphere_radius = 100.0
+flag_disable_z = true
+gravity = Vector3( 0, 0, 0 )
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+radial_accel = -100.0
+color_ramp = SubResource( 2 )
+
+[sub_resource type="CircleShape2D" id=4]
+radius = 100.0
+
+[node name="GravityWell" type="Area2D"]
+space_override = 1
+gravity_point = true
+gravity_vec = Vector2( 0, 0 )
+gravity = 100.0
+linear_damp = 0.0
+angular_damp = 0.0
+collision_layer = 0
+
+[node name="Particles2D" type="Particles2D" parent="."]
+amount = 100
+process_material = SubResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 4 )

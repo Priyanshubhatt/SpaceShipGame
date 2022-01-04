@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Sandbox/Sprites/SpaceObjects/RedPlanet1.png" type="Texture" id=1]
+[ext_resource path="res://Sandbox/Scripts/Galaxy/GalaxyMapNode.cs" type="Script" id=2]
+[ext_resource path="res://Sandbox/Scenes/GalaxyMaps/GalaxyMapNodeSprite.cs" type="Script" id=3]
+
+[node name="GalaxyMapNode" type="Node2D"]
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 0.0683506, 0.0683506 )
+texture = ExtResource( 1 )
+script = ExtResource( 3 )
+
+[node name="SystemName" type="Label" parent="."]
+margin_left = -25.0
+margin_top = 20.0
+margin_right = 25.0
+margin_bottom = 40.0
+grow_horizontal = 2
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}

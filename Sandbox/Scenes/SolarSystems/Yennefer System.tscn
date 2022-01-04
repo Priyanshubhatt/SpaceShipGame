@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Sandbox/Scenes/SpaceObjects/WarpGate.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Sandbox/Scenes/SolarSystemBackgrounds/ParallaxSpaceBackground.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Sandbox/Sprites/SpaceObjects/Planet082.png" type="Texture" id=3]
+
+[node name="Yennefer System" type="Node2D"]
+
+[node name="ParallaxSpaceBackground" parent="." instance=ExtResource( 2 )]
+
+[node name="Sprite" type="Sprite" parent="ParallaxSpaceBackground/NearBackground" index="0"]
+texture = ExtResource( 3 )
+
+[node name="WarpGates" type="Node" parent="."]
+
+[node name="WarpGate to Quaid System" parent="WarpGates" instance=ExtResource( 1 )]
+position = Vector2( 574.834, -115.876 )
+destinationSolarSystemName = "Quaid System"
+
+[node name="SpaceObjects" type="Node" parent="."]
+
+[editable path="ParallaxSpaceBackground"]

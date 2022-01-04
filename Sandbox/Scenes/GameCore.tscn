@@ -1,0 +1,64 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Sandbox/Scripts/GameCore.cs" type="Script" id=1]
+[ext_resource path="res://Sandbox/Scenes/UIScenes/MissionAccomplishedUI.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Sandbox/Scripts/MainCamera.cs" type="Script" id=5]
+[ext_resource path="res://Sandbox/Scenes/UIScenes/ShipInfoPanels.tscn" type="PackedScene" id=7]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0, 0, 0, 0.196078 )
+
+[node name="GameCore" type="Node"]
+script = ExtResource( 1 )
+startFocusedOnShip = 1
+
+[node name="GameObjectsRoot" type="Node2D" parent="."]
+
+[node name="MainCamera" type="Camera2D" parent="."]
+current = true
+script = ExtResource( 5 )
+
+[node name="HUD" type="CanvasLayer" parent="."]
+layer = 10
+
+[node name="MissionAccomplishedUI" parent="HUD" instance=ExtResource( 2 )]
+
+[node name="HelpUI" type="PanelContainer" parent="HUD"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -543.0
+margin_bottom = -419.0
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="HUD/HelpUI"]
+margin_right = 481.0
+margin_bottom = 187.0
+custom_constants/margin_right = 10
+custom_constants/margin_top = 10
+custom_constants/margin_left = 10
+custom_constants/margin_bottom = 10
+
+[node name="Label" type="Label" parent="HUD/HelpUI/MarginContainer"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 471.0
+margin_bottom = 177.0
+text = "Press F1 to hide help
+
+Select ship to follow/control
+Select propulsion mode
+Manual Propusion Mode: Press WASDQE to maneuver
+UFO Drive: To get started, ship unaffected by external forces
+Press ENTER to jump when overlapping  WarpGate
+Press / to land when overlapping Kepler 438
+Scrollwheel or PgUp/PgDown to zoom camera
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ShipInfoPanels" parent="HUD" instance=ExtResource( 7 )]
+margin_top = -200.0

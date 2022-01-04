@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Sandbox/Scenes/SpaceObjects/WarpGate.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Sandbox/Scenes/SolarSystemBackgrounds/ParallaxSpaceBackground.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Sandbox/Sprites/SpaceObjects/OrangePlanet.png" type="Texture" id=3]
+[ext_resource path="res://Sandbox/Scenes/SpaceObjects/GravityWell.tscn" type="PackedScene" id=4]
+
+[node name="Groombridge System" type="Node2D"]
+
+[node name="ParallaxSpaceBackground" parent="." instance=ExtResource( 2 )]
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 2.68398, 2.68398 )
+texture = ExtResource( 3 )
+
+[node name="GravityWell" parent="." instance=ExtResource( 4 )]
+scale = Vector2( 9.59106, 9.59106 )
+gravity = 200.0
+
+[node name="WarpGates" type="Node" parent="."]
+
+[node name="WarpGate to Kepler 438 System" parent="WarpGates" instance=ExtResource( 1 )]
+position = Vector2( 781.646, 380.802 )
+destinationSolarSystemName = "Kepler 438 System"
+
+[node name="WarpGate to Wolf 359 System" parent="WarpGates" instance=ExtResource( 1 )]
+position = Vector2( -430.907, -217.124 )
+destinationSolarSystemName = "Wolf 359 System"
+
+[node name="WarpGate to Aquarii System" parent="WarpGates" instance=ExtResource( 1 )]
+position = Vector2( -305.644, 302.303 )
+destinationSolarSystemName = "Aquarii System"
+
+[node name="WarpGate to Quaid System" parent="WarpGates" instance=ExtResource( 1 )]
+position = Vector2( 485.267, -396.735 )
+destinationSolarSystemName = "Quaid System"
+
+[node name="SpaceObjects" type="Node" parent="."]
+
+[editable path="ParallaxSpaceBackground"]

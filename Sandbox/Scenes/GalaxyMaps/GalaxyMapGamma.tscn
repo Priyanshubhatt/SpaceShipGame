@@ -1,0 +1,160 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Sandbox/Scenes/GalaxyMaps/GalaxyMapEdge.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Sandbox/Scenes/GalaxyMaps/GalaxyMapNode.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Sandbox/Sprites/SpaceObjects/Space.png" type="Texture" id=3]
+[ext_resource path="res://Sandbox/Scripts/Galaxy/GalaxyMap.cs" type="Script" id=17]
+
+[node name="GalaxyMapGamma" type="Node2D"]
+script = ExtResource( 17 )
+startingNodePath = NodePath("Nodes/Sol System")
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 3 )
+
+[node name="Nodes" type="Node2D" parent="."]
+z_index = 2
+
+[node name="Sol System" parent="Nodes" instance=ExtResource( 2 )]
+position = Vector2( 115.631, 521.021 )
+
+[node name="Alpha Centauri System" parent="Nodes" instance=ExtResource( 2 )]
+position = Vector2( 512.859, 463.886 )
+
+[node name="Kepler 438 System" parent="Nodes" instance=ExtResource( 2 )]
+position = Vector2( 651.617, 209.497 )
+
+[node name="Barnard\'s Star System" parent="Nodes" instance=ExtResource( 2 )]
+position = Vector2( 355.056, 344.173 )
+
+[node name="Wolf 359 System" parent="Nodes" instance=ExtResource( 2 )]
+position = Vector2( 735.96, 408.111 )
+
+[node name="Sirius System" parent="Nodes" instance=ExtResource( 2 )]
+position = Vector2( 189.091, 380.903 )
+
+[node name="Luyten System" parent="Nodes" instance=ExtResource( 2 )]
+position = Vector2( 136.037, 214.938 )
+
+[node name="Groombridge System" parent="Nodes" instance=ExtResource( 2 )]
+position = Vector2( 861.114, 220.38 )
+
+[node name="Kruger System" parent="Nodes" instance=ExtResource( 2 )]
+position = Vector2( 914.168, 530.544 )
+
+[node name="Aquarii System" parent="Nodes" instance=ExtResource( 2 )]
+position = Vector2( 931.853, 356.417 )
+
+[node name="Cygni System" parent="Nodes" instance=ExtResource( 2 )]
+position = Vector2( 314.245, 119.713 )
+
+[node name="Indi System" parent="Nodes" instance=ExtResource( 2 )]
+position = Vector2( 78.9014, 68.0185 )
+
+[node name="Yennefer System" parent="Nodes" instance=ExtResource( 2 )]
+position = Vector2( 545.508, 43.5318 )
+
+[node name="Quaid System" parent="Nodes" instance=ExtResource( 2 )]
+position = Vector2( 842.069, 78.9014 )
+
+[node name="Edges" type="Node2D" parent="."]
+z_index = 1
+
+[node name="Sol_Alpha Centauri" parent="Edges" instance=ExtResource( 1 )]
+nodeAPath = NodePath("../../Nodes/Sol System")
+nodeBPath = NodePath("../../Nodes/Alpha Centauri System")
+edgeCost = 14.0
+
+[node name="Sol_Sirius" parent="Edges" instance=ExtResource( 1 )]
+nodeAPath = NodePath("../../Nodes/Sol System")
+nodeBPath = NodePath("../../Nodes/Sirius System")
+edgeCost = 7.0
+
+[node name="Alpha Centauri_Barnard\'s Star" parent="Edges" instance=ExtResource( 1 )]
+nodeAPath = NodePath("../../Nodes/Alpha Centauri System")
+nodeBPath = NodePath("../../Nodes/Barnard\'s Star System")
+edgeCost = 10.0
+
+[node name="Alpha Centauri_Wolf 359" parent="Edges" instance=ExtResource( 1 )]
+nodeAPath = NodePath("../../Nodes/Alpha Centauri System")
+nodeBPath = NodePath("../../Nodes/Wolf 359 System")
+edgeCost = 10.0
+
+[node name="Alpha Centauri_Kruger" parent="Edges" instance=ExtResource( 1 )]
+nodeAPath = NodePath("../../Nodes/Alpha Centauri System")
+nodeBPath = NodePath("../../Nodes/Kruger System")
+edgeCost = 5.0
+
+[node name="Barnard\'s Star_Sirius" parent="Edges" instance=ExtResource( 1 )]
+nodeAPath = NodePath("../../Nodes/Barnard\'s Star System")
+nodeBPath = NodePath("../../Nodes/Sirius System")
+edgeCost = 2.0
+
+[node name="Barnard\'s Star_Wolf 359" parent="Edges" instance=ExtResource( 1 )]
+nodeAPath = NodePath("../../Nodes/Barnard\'s Star System")
+nodeBPath = NodePath("../../Nodes/Wolf 359 System")
+edgeCost = 11.0
+
+[node name="Barnard\'s Star_Indi" parent="Edges" instance=ExtResource( 1 )]
+nodeAPath = NodePath("../../Nodes/Barnard\'s Star System")
+nodeBPath = NodePath("../../Nodes/Indi System")
+
+[node name="Wolf 359_Aquarii" parent="Edges" instance=ExtResource( 1 )]
+nodeAPath = NodePath("../../Nodes/Wolf 359 System")
+nodeBPath = NodePath("../../Nodes/Aquarii System")
+edgeCost = 6.0
+
+[node name="Wolf 359_Groombridge" parent="Edges" instance=ExtResource( 1 )]
+nodeAPath = NodePath("../../Nodes/Wolf 359 System")
+nodeBPath = NodePath("../../Nodes/Groombridge System")
+edgeCost = 13.0
+
+[node name="Aquarii_Groombridge" parent="Edges" instance=ExtResource( 1 )]
+nodeAPath = NodePath("../../Nodes/Aquarii System")
+nodeBPath = NodePath("../../Nodes/Groombridge System")
+edgeCost = 6.0
+
+[node name="Sirius_Luyten" parent="Edges" instance=ExtResource( 1 )]
+nodeAPath = NodePath("../../Nodes/Sirius System")
+nodeBPath = NodePath("../../Nodes/Luyten System")
+edgeCost = 9.0
+
+[node name="Luyten_Cygni" parent="Edges" instance=ExtResource( 1 )]
+nodeAPath = NodePath("../../Nodes/Luyten System")
+nodeBPath = NodePath("../../Nodes/Cygni System")
+edgeCost = 9.0
+
+[node name="Indi_Quaid" parent="Edges" instance=ExtResource( 1 )]
+nodeAPath = NodePath("../../Nodes/Indi System")
+nodeBPath = NodePath("../../Nodes/Quaid System")
+edgeCost = 25.0
+
+[node name="Groombridge_Kepler 438" parent="Edges" instance=ExtResource( 1 )]
+nodeAPath = NodePath("../../Nodes/Groombridge System")
+nodeBPath = NodePath("../../Nodes/Kepler 438 System")
+edgeCost = 9.0
+
+[node name="Groombridge_Quaid" parent="Edges" instance=ExtResource( 1 )]
+nodeAPath = NodePath("../../Nodes/Groombridge System")
+nodeBPath = NodePath("../../Nodes/Quaid System")
+edgeCost = 9.0
+
+[node name="Cygni_Quaid" parent="Edges" instance=ExtResource( 1 )]
+nodeAPath = NodePath("../../Nodes/Cygni System")
+nodeBPath = NodePath("../../Nodes/Quaid System")
+edgeCost = 8.0
+
+[node name="Quaid_Yennefer" parent="Edges" instance=ExtResource( 1 )]
+nodeAPath = NodePath("../../Nodes/Quaid System")
+nodeBPath = NodePath("../../Nodes/Yennefer System")
+edgeCost = 2.0
+
+[node name="Quaid_Kepler 438" parent="Edges" instance=ExtResource( 1 )]
+nodeAPath = NodePath("../../Nodes/Quaid System")
+nodeBPath = NodePath("../../Nodes/Kepler 438 System")
+edgeCost = 2.0
+
+[node name="Indi_Luyten" parent="Edges" instance=ExtResource( 1 )]
+nodeAPath = NodePath("../../Nodes/Indi System")
+nodeBPath = NodePath("../../Nodes/Luyten System")
+edgeCost = 4.0
